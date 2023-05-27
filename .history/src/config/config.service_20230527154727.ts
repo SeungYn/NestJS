@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { EnvConfig } from './interfaces';
-import * as path from 'path';
-import * as dotenv from 'dotenv';
-import * as fs from 'fs';
+import path from 'path';
 
 @Injectable()
 export class ConfigService {
@@ -11,12 +9,7 @@ export class ConfigService {
   constructor() {
     const options = { folder: './config' };
 
-    const filePath = `${process.env.NODE_ENV || 'development'}.env`;
+    const filePath = `${process.env.NODE_ENV || 'devlopment'}.env`;
     const envFile = path.resolve(__dirname, '../../', options.folder, filePath);
-    this.envConfig = dotenv.parse(fs.readFileSync(envFile));
-  }
-
-  get(key: string): string {
-    return this.envConfig[key];
   }
 }
