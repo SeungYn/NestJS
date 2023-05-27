@@ -13,7 +13,6 @@ export class ConfigService {
     const envFile = path.resolve(__dirname, '../../', options.folder, filePath);
     this.envConfig = dotenv.parse(fs.readFileSync(envFile));
     console.log(options);
-    console.log(this.envConfig);
   }
 
   get(key: string): string {

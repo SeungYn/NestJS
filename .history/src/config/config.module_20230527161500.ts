@@ -8,10 +8,7 @@ export class ConfigModule {
   static register(options: Record<string, any>): DynamicModule {
     return {
       module: ConfigModule,
-      providers: [
-        { provide: 'CONFIG_OPTIONS', useValue: options },
-        ConfigService,
-      ],
+      providers: [ConfigService],
       exports: [ConfigService],
     };
   }
