@@ -9,7 +9,6 @@ export class ConfigModule {
     return {
       module: ConfigModule,
       providers: [ConfigService],
-      exports: [ConfigService],
     };
   }
 }

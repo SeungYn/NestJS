@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
 
 @Module({
-  imports: [ConfigModule.register()],
+  imports: [ConfigModule.register({ folder: './config' })],
   controllers: [AppController],
   providers: [AppService],
 })
